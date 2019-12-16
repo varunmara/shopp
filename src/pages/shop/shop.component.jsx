@@ -1,10 +1,13 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
-import CollectionOverview from "../../components/collection-overview/collection-overview.component";
-
-const ShopPage = () => (
+const ShopPage = ({ match }) => (
   <div className="shop-page">
-    <CollectionOverview />
+    <BrowserRouter
+      exact
+      path={`$(match.path)`}
+      component={CollectionOverview}
+    />
   </div>
 );
 
